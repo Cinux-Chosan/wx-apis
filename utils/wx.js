@@ -1,4 +1,4 @@
-const rp = require('request-promise');
+const rp = require('request-promise-native');
 
 
 const wxapiData = require('../data/wxapi-data');
