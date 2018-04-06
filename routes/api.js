@@ -6,6 +6,7 @@ var token = 'cqmanlong';
 
 /* GET users listing. */
 router.get('/business', function(req, res, next) {
+  console.log(req.headers.host, req.url, req.ip);
   try {
     let { signature, timestamp, nonce, echostr } = req.query;
     let arr = [timestamp, nonce, token].sort();
