@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var crypto = require('crypto');
+var request = require('request');
 var util = require('util');
 var token = 'cqmanlong';
+
+var { getAccessToken } = require('../utils/wx');
 
 /* GET users listing. */
 router.get('/business', function(req, res, next) {
@@ -24,6 +27,10 @@ router.get('/business', function(req, res, next) {
 router.post('/business', function(req, res, next) {
   console.log(req.body);
   res.end(util.inspect(req.body));
+})
+
+router.get('/getAccessToken', (req, res) => {
+  res.end(util.inspect(getAccessToken()));
 })
 
 
