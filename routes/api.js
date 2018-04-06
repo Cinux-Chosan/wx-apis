@@ -13,7 +13,7 @@ router.get('/business', function(req, res, next) {
     if (result === signature) {
       res.end(echostr);
     } else {
-      res.end(undefined);
+      res.end('参数缺失!');
     }
   } catch (error) {
       res.end(undefined);
