@@ -12,6 +12,8 @@ router.get('/business', function(req, res, next) {
     let result = getSha1(arr.join(''));
     if (result === signature) {
       res.end(echostr);
+    } else {
+      res.end(undefined);
     }
   } catch (error) {
       res.end(undefined);
