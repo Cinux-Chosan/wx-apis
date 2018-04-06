@@ -29,8 +29,8 @@ router.post('/business', function(req, res, next) {
   res.end(util.inspect(req.body));
 })
 
-router.get('/getAccessToken', (req, res) => {
-  res.end(util.inspect(getAccessToken()));
+router.get('/getAccessToken', async (req, res) => {
+  res.end(util.inspect(await getAccessToken()));
 })
 
 
