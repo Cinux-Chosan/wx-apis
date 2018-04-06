@@ -5,7 +5,7 @@ var request = require('request');
 var util = require('util');
 var token = 'cqmanlong';
 
-var { getAccessToken } = require('../utils/wx');
+var { getAccessToken, getJsapiTicket } = require('../utils/wx');
 
 /* GET users listing. */
 router.get('/business', function(req, res, next) {
@@ -31,6 +31,10 @@ router.post('/business', function(req, res, next) {
 
 router.get('/getAccessToken', async (req, res) => {
   res.end(util.inspect(await getAccessToken()));
+})
+
+router.get('/getJsapiTicket', async(req, res) => {
+  res.end(util.inspect(await getJsapiTicket()));
 })
 
 
